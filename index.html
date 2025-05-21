@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Analytical Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="src/style.css" />
+  <script src="/src/chart.js"></script>
+</head>
+<body>
+  <div class="dashboard">
+    <aside class="sidebar">
+      <h2>Filters</h2>
+      <label for="divisionFilter">Division</label>
+      <h5>You can select multiple divisions by Ctrl+Click</h5>
+      <select id="divisionFilter" multiple>
+        <option value="">All Divisions</option>
+      </select>
+
+      <label for="genderFilter">Gender</label>
+      <select id="genderFilter">
+        <option value="">All Genders</option>
+      </select>
+    </aside>
+
+    <main class="main-content">
+      <div class="user-bar">
+        <span id="userRole"></span>
+        <button onclick="logout()">Logout</button>
+        <span id="darkModeToggle">🌙</span>
+      </div>
+      <div class="kpi-cards">
+        <div class="card" id="totalCustomers">Total Customers: ...</div>
+        <div class="card" id="avgIncome">Average Income: ...</div>
+        <div class="card" id="avgAge">Average Age: ...</div>
+      </div>
+      <div class="chart-row">
+        <div class="chart-box">
+          <canvas id="barChart"></canvas>
+        </div>
+        <div class="chart-box">
+          <canvas id="pieChart"></canvas>
+        </div>
+      </div>
+      <div class="table-section">
+        <h3>Customer Data</h3>
+        <table id="dataTable">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Division</th>
+              <th>Gender</th>
+              <th>Marital</th>
+              <th>Age</th>
+              <th>Income</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div id="adminControls" style="margin: 20px 0;"></div>
+    </main>
+  </div>
+  <script type="module" src="src/main.js"></script>
+  <script src="src/theme.js" defer></script>
+</body>
+</html>

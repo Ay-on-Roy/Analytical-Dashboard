@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | Analytical Dashboard</title>
+  <link rel="stylesheet" href="/src/login.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h2>Welcome, Please Log In</h2>
+      <span id="darkModeToggle">🌙</span>
+    </div>
+    
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Username" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button type="submit">Login</button>
+    </form>
+
+    <p id="errorMsg"></p>
+  </div>
+
+  <script type="module" src="/src/login.js"></script>
+  <script src="/src/theme.js"></script>
+</body>
+</html>
